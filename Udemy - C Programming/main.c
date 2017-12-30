@@ -1,13 +1,17 @@
 #include <stdio.h>
 
-/*	This program displays any
- *	arguments that were passed to it*/
-
 int main(int argc, char **argv)
 {
-	int i;
-	for (i = 0; i < argc; i++) {
-		printf("Hello World! argc=%d arg %d is %s\n", argc, i, argv[i]);	//prints arg at index i
-	}
+	double pettycash;
+	double grandtotal;
+	// or double pettycash, grandtotal
+	// or assign default value: double grandtotal = 500.50;
+
+	grandtotal = 500.50;
+	pettycash = 10.5;
+	printf("pettycash=%.2f\n", pettycash);
+	pettycash = 100.25;
+	printf("pettycash=%.2f\n", pettycash);
+	printf("grandtotal=%.2f\n", grandtotal);
 	return 0;
 }
