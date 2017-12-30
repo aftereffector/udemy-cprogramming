@@ -2,16 +2,16 @@
 
 int main(int argc, char **argv)
 {
-	double pettycash;
-	double grandtotal;
-	// or double pettycash, grandtotal
-	// or assign default value: double grandtotal = 500.50;
+	int subtotal;
+	int tax;
+	int grandtotal;
+	double taxrate;
 
-	grandtotal = 500.50;
-	pettycash = 10.5;
-	printf("pettycash=%.2f\n", pettycash);
-	pettycash = 100.25;
-	printf("pettycash=%.2f\n", pettycash);
-	printf("grandtotal=%.2f\n", grandtotal);
+	taxrate = 0.175;
+	subtotal = 200;
+	tax = subtotal * taxrate;
+	grandtotal = subtotal + tax;
+
+	printf("The tax on %d is %d, so the grand total is %d.\n", subtotal, tax, grandtotal);
 	return 0;
 }
