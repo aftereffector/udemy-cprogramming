@@ -1,39 +1,74 @@
 #include <stdio.h>
-#define _USE_MATH_DEFINES
-#include <math.h>
+
+void showPrefixAndPostfixOps() {
+	int num1, num2;
+	printf("\nPrefix and Postfix operators... (num1 = 10)");
+	num1 = 10;
+	num2 = num1++; // num2 = 10, num1 = 11
+	printf("\nnum2 = num1++; so num2 = %d and num1 = %d", num2, num1);
+
+	num1 = 10;
+	num2 = ++num1; // num2 = 11, num1 = 11
+	printf("\nnum2 = ++num1; so num2 = %d and num1 = %d", num2, num1);
+}
 
 int main(int argc, char **argv) {
-#define TAXRATE_DEFINED 0.175
-	const double TAXRATE_CONST = 0.175;
+	int age;
+	int bonus;
 
-	double subtotal;
-	double tax;
-	double grandtotal;
-	double taxrate;
+	int a;
+	int b;
+	a = 10;
+	b = 2;
 
+	age = 70;
+	if (age > 45) {
+		bonus = 1000;
+	}
+	else {
+		bonus = 500;
+	}
+	printf("Your age is %d, so your bonus is %d.\n", age, bonus);
 
-	taxrate = 0.175;
-	subtotal = 200;
-	taxrate = 0.2;					// redefine a variable
-	tax = subtotal * taxrate;
-	grandtotal = subtotal + tax;
+	if (age <= 70) {
+		printf("You are one of our youngest employees!\n");
+	}
 
-	printf("(taxrate is %.3f) The tax on %.2f is %.2f, so the grand total is %.2f.\n", taxrate, subtotal, tax, grandtotal);
+	if (bonus >= 1000) {
+		printf("You've earned a high bonus!\n");
+	}
 
-	subtotal = 200;
-#define TAXRATE_DEFINED 0.2		// redefine a #define 'constant'
-	tax = subtotal * TAXRATE_DEFINED;
-	grandtotal = subtotal + tax;
+	printf("\n\nHere are examples of some compound assignment operators...\n");
+	a = a + b;
+	printf("\na + b  : %d\n", a);
+	a = 10;
+	a += b;
+	printf("a += b  : %d\n", a);
+	a = 10;
+	a = a - b;
+	printf("a - b  : %d\n", a);
+	a = 10;
+	a -= b;
+	printf("a -= b  : %d\n", a);
+	a = 10;
+	a = a * b;
+	printf("a * b  : %d\n", a);
+	a = 10;
+	a *= b;
+	printf("a *= b  : %d\n", a);
+	a = 10;
+	a = a / b;
+	printf("a/b  : %d\n", a);
+	a = 10;
+	a /= b;
+	printf("a /= b  : %d\n", a);
+	a = 10;
+	a++;
+	printf("a++ : %d\n", a);
+	a = 10;
+	a--;
+	printf("a-- : %d\n", a);
 
-	printf("(TAXRATE_DEFINED is %.3f) The tax on %.2f is %.2f, so the grand total is %.2f.\n", TAXRATE_DEFINED, subtotal, tax, grandtotal);
-
-
-	subtotal = 200;
-	// TAXRATE_CONST = 0.2;			// cannot redefine a true constant!
-	tax = subtotal * TAXRATE_CONST;
-	grandtotal = subtotal + tax;
-
-	printf("(TAXRATE_CONST is %.3f) The tax on %.2f is %.2f, so the grand total is %.2f.\n", TAXRATE_CONST, subtotal, tax, grandtotal);
-
-	return 0;
+	showPrefixAndPostfixOps();
+	return(0);
 }
