@@ -1,9 +1,13 @@
 #include <stdio.h>
 
+/*	This program displays any
+ *	arguments that were passed to it*/
+
 int main(int argc, char **argv)
 {
-	printf("hello world\n");
-	puts("hello world again\n");
-	printf("There are %d bottles standing on the %s\n.", 20, "wall");
+	int i;
+	for (i = 0; i < argc; i++) {
+		printf("Hello World! argc=%d arg %d is %s\n", argc, i, argv[i]);	//prints arg at index i
+	}
 	return 0;
 }
