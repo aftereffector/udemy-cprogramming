@@ -1,25 +1,36 @@
 #include <stdio.h>
 
+void flush_input() {
+	int ch;
+	while ((ch = getchar()) != '\n' && ch != EOF);
+}
+
+void getinput_with_gets() {
+	char firstname[5];
+	char lastname[5];
+	printf("Enter your first name:");
+	gets(firstname);
+	printf("Enter your last name:");
+	gets(lastname);
+	printf("Hello, %s, %s\n", firstname, lastname);
+}
+
+
+void getinput_with_fgets() {
+	char firstname[5];
+	char lastname[5];
+	printf("Enter your first name:");
+	fgets(firstname, 5, stdin);
+	printf("Enter your last name:");
+	// fflush(stdin);	// This function may not (invariably) work with input!
+	flush_input();
+	fgets(lastname, 5, stdin);
+	flush_input();
+	printf("Hello, %s, %s\n", firstname, lastname);
+}
+
 int main(int argc, char **argv) {
-	char agestring[10];
-	int age;
-	int bonus;
-
-	printf("Enter your age : ");
-	gets(agestring);
-	age = atoi(agestring);	//uses "a to i" function (atoi) to convert to integer
-	if (age == 0) {
-		printf("You entered an invalid age, so your bonus cannot be calculated.\n");
-	}
-	else {
-		if (age > 45) {
-			bonus = 1000;
-		}
-		else {
-			bonus = 500;
-		}
-		printf("Your age is %d, so your bonus is %d.\n", age, bonus);
-	}
-
-	return(0);
+	//getinput_with_gets();
+	getinput_with_fgets();
+	return 0;
 }
