@@ -1,52 +1,37 @@
 #include <stdio.h>
 
-#define STRLEN 5
-
-/*
-int readln(char s[], int maxlen) {
-	int len_s;
-	fgets(s, maxlen, stdin);
-	len_s = strlen(s);
-	if (s[len_s - 1] == '\n') {
-		s[len_s - 1] = '\0';
-		len_s -= 1;
-	}
-	rewind(stdin); // This flushes the keyboard buffer (on Windows anyway!)
-	return len_s;
+void sayHello() { 
+	printf("Hello\n"); 
 }
-*/
 
-///*
-int readln(char s[], int maxlen) {
-	char ch;
-	int i;
-	int chars_remain;
-	i = 0;
-	chars_remain = 1;
-	while (chars_remain) {
-		ch = getchar();
-		if ((ch == '\n') || (ch == EOF)) {
-			chars_remain = 0;
-		}
-		else if (i < maxlen - 1) {
-			s[i] = ch;
-			i++;
-		}
-	}
-	s[i] = '\0';
-	return i;
+void greet(char aName[]) {
+	printf("Hello %s\n", aName);
 }
-//*/
+
+int add(int num1, int num2) {
+	num1 = num1 + num2;
+	return num1;
+}
+
+double divide(int num1, int num2) {
+	return num1 / num2;
+}
 
 int main(int argc, char **argv) {
-	char firstname[STRLEN];
-	char lastname[STRLEN];
-	int len_firstname;
-	int len_lastname;
-	printf("Enter your first name:");
-	len_firstname = readln(firstname, STRLEN);
-	printf("Enter your last name:");
-	len_lastname = readln(lastname, STRLEN);
-	printf("Hello, %s, %s\n", firstname, lastname);
-	printf("Length of firstname = %d, lastname = %d", len_firstname, len_lastname);
+	double result;
+	int n1;
+	int n2;
+	int total;
+
+	n1 = 10;
+	n2 = 3;
+
+	sayHello();
+	greet("Daniel");
+
+	total = add(n1, n2);
+	printf("n1: %d, n2: %d, total: %d\n", n1, n2, total);
+	result = divide(100, 3);
+	printf("Result = %.2f\n", result);
+	return 0;
 }
