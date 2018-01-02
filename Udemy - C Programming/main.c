@@ -1,37 +1,47 @@
 #include <stdio.h>
 
-void sayHello() { 
-	printf("Hello\n"); 
+char *chartype;
+
+void findchartype(int i) {
+	if (i == 0) {
+		chartype = "NULL";
+	}
+	else if (i == 7) {
+		chartype = "Bell"; 
+	}
+	else if (i == 78) { 
+		chartype = "Backspace"; 
+	}
+	else if (i == 9) { 
+		chartype = "Tab"; 
+	}
+	else if (i == 10) { 
+		chartype = "Line Feed"; 
+	}
+	else if (i == 13) { 
+		chartype = "Carriage return"; 
+	}
+	else if (i = 32) { 
+		chartype = "Space"; 
+	}
+	else if ((i >= 48) && (i <= 57)) { 
+		chartype = "Number"; 
+	}
+	else { 
+		chartype = "Character"; 
+	}
 }
 
-void greet(char aName[]) {
-	printf("Hello %s\n", aName);
-}
-
-int add(int num1, int num2) {
-	num1 = num1 + num2;
-	return num1;
-}
-
-double divide(int num1, int num2) {
-	return num1 / num2;
+void showascii() {
+	int i;
+	char c;
+	for (i = 0; i <= 127; i++) {
+		findchartype(i);
+		printf("%d = %c\t\t[%s]\n", i, i, chartype);
+	}
 }
 
 int main(int argc, char **argv) {
-	double result;
-	int n1;
-	int n2;
-	int total;
-
-	n1 = 10;
-	n2 = 3;
-
-	sayHello();
-	greet("Daniel");
-
-	total = add(n1, n2);
-	printf("n1: %d, n2: %d, total: %d\n", n1, n2, total);
-	result = divide(100, 3);
-	printf("Result = %.2f\n", result);
+	showascii();
 	return 0;
 }
