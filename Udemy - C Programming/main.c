@@ -9,7 +9,7 @@ void findchartype(int i) {
 	else if (i == 7) {
 		chartype = "Bell"; 
 	}
-	else if (i == 78) { 
+	else if (i == 8) { 
 		chartype = "Backspace"; 
 	}
 	else if (i == 9) { 
