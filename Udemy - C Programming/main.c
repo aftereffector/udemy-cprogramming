@@ -3,32 +3,43 @@
 char *chartype;
 
 void findchartype(int i) {
-	if (i == 0) {
-		chartype = "NULL";
-	}
-	else if (i == 7) {
-		chartype = "Bell"; 
-	}
-	else if (i == 8) { 
-		chartype = "Backspace"; 
-	}
-	else if (i == 9) { 
-		chartype = "Tab"; 
-	}
-	else if (i == 10) { 
-		chartype = "Line Feed"; 
-	}
-	else if (i == 13) { 
-		chartype = "Carriage return"; 
-	}
-	else if (i = 32) { 
-		chartype = "Space"; 
-	}
-	else if ((i >= 48) && (i <= 57)) { 
-		chartype = "Number"; 
-	}
-	else { 
-		chartype = "Character"; 
+	switch(i){
+		case 0:
+			chartype = "NULL";
+			break;
+		case 7:
+			chartype = "Bell";
+			break;
+		case 8:
+			chartype = "Backspace";
+			break;
+		case 9:
+			chartype = "Tab";
+			break;
+		case 10:
+			chartype = "Linefeed";
+			break;
+		case 13:
+			chartype = "Carriage Return";
+			break;
+		case 32:
+			chartype = "Space";
+			break;
+		case 48:
+		case 49:
+		case 50:
+		case 51:
+		case 52:
+		case 53:
+		case 54:
+		case 55:
+		case 56:
+		case 57:
+			chartype = "Number";
+			break;
+		default:
+			chartype = "Character (default)";
+			break;
 	}
 }
 
