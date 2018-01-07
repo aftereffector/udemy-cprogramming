@@ -6,15 +6,13 @@ char chararray1[] = { 'h', 'e', 'l', 'l', 'o', '\0' };
 char chararray2[] = "world";
 
 int main(int argc, char **argv) {
-	int i;
+	int i = 0;
 
-	for (i = 0; i < 5; i++) {
-		array1[i] = ((i + 1) * 100);
-	}
-
-	printf("--- for loop --- \n");
-	for (i = 0; i < 5; i++) {
+	printf("--- while loop --- \n");
+	while( i < 5){
 		printf("%d\n", array1[i]);
+		i++;
 	}
+
 	return 0;
 }
