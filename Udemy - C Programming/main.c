@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-int array1[5];
+int array1[5] = { 1,2,3,4,5 };
+double doublearray[] = { 1.0, 1.1, 1.2, 1.3 };
+char chararray1[] = { 'h', 'e', 'l', 'l', 'o', '\0' };
+char chararray2[] = "world";
 
 int main(int argc, char **argv) {
 	int i;
 
-	array1[0] = 11;
-	array1[1] = 22;
-	array1[2] = 33;
-	array1[3] = 44;
-	array1[4] = 55;
+	for (i = 0; i < 5; i++) {
+		array1[i] = ((i + 1) * 100);
+	}
 
+	printf("--- for loop --- \n");
 	for (i = 0; i < 5; i++) {
 		printf("%d\n", array1[i]);
 	}
-	printf("Input array position to display value:\n");
-	printf("The value of the array at position %d is %d.\n", 3, array1[3]);
 	return 0;
 }
