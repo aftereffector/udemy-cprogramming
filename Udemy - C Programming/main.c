@@ -8,11 +8,11 @@ char chararray2[] = "world";
 int main(int argc, char **argv) {
 	int i = 0;
 
-	printf("--- while loop --- \n");
-	while( i < 5){
+	printf("--- do...while loop --- \n");
+	do {
 		printf("%d\n", array1[i]);
 		i++;
-	}
+	} while (i < 5);
 
 	return 0;
 }
