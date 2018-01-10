@@ -1,56 +1,27 @@
 #include <stdio.h>
 
-char plaintext[] = "The quick brown fox jumps over the lazy dog.";
-
-void encryptWithWhile() {
-	int i = 0;
-	char ciphertext[50];
-	char c;
-
-	//Encrypt string
-	while (i >= 0) {
-		c = plaintext[i];
-		// Continue does not work with while() loops
-		/*
-		if (c == ' ') {
-			ciphertext[i] = c;
-			continue;
-		}
-		*/
-		if (c == '.') {
-			ciphertext[i] = '\0';
-			break;
-		}
-		ciphertext[i] = plaintext[i] + 1;
-		i++;
-	}
-	printf("Encrypted string is '%s'\n", ciphertext);
-
-	//Decrypt string
-	int n = 0;
-	char plaintext2[50];
-	char d;
-	while (n >= 0) {
-		d = ciphertext[n];
-		// Continue does not work with while() loops
-		/*
-		if (d == ' ') {
-			plaintext2[n] = d;
-			continue;
-		}
-		*/
-		if (d == '\0') {
-			plaintext2[n] = '.';
-			break;
-		}
-		plaintext2[n] = ciphertext[n] - 1;
-		n++;
-	}
-	printf("Decrypted string is '%s'\n", plaintext2);
-}
-
 int main(int argc, char **argv) {
-	printf("Plaintext string is '%s'\n", plaintext);
-	encryptWithWhile();
+
+	char str1[] = "Hello";
+	char *str2 = "Hello";
+	char str3[6];
+
+	str3[0] = 'H';
+	str3[1] = 'e';
+	str3[2] = 'l';
+	str3[3] = 'l';
+	str3[4] = 'o';
+	str3[5] = '\0';
+
+	printf("%x %s\n", str1, str1);
+	printf("%x %s\n", str2, str2);
+	printf("%x %s\n", str3, str3);
+
+	printf("%x, %x, %x, %x, %x, %x\n", &str3[0], &str3[1], &str3[2], &str3[3], &str3[4], &str3[5]);
+	printf("%x, %x, %x, %x, %x, %x\n", str3, str3 + 1, str3 + 2, str3 + 3, str3 + 4, str3 + 5);
+
+	str2 = "Goodbye";
+	printf("str2 - %s\n", str2);
+	
 	return 0;
 }
