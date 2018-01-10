@@ -3,12 +3,14 @@
 
 #define NUMBER_OF_CDS 2
 
-struct cd {
+//typedef struct cd CD;	//one way to use typedef
+
+typedef struct cd {
 	char name[50];
 	char artist[50];
 	int trackcount;
 	int rating;
-};
+} CD;
 
 struct cd my_cd_collection[NUMBER_OF_CDS];
 
