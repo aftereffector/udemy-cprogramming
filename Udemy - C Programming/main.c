@@ -3,13 +3,15 @@
 
 #define NUMBER_OF_CDS 2
 
-//typedef struct cd CD;	//one way to use typedef
+enum score {
+	Terrible, Bad, Average, Good, Excellent
+};
 
 typedef struct cd {
 	char name[50];
 	char artist[50];
 	int trackcount;
-	int rating;
+	enum score rating;
 } CD;
 
 struct cd my_cd_collection[NUMBER_OF_CDS];
@@ -18,12 +20,12 @@ void create_cdcollection() {
 	strcpy_s(my_cd_collection[0].name, 50, "Wonder What's Next");
 	strcpy_s(my_cd_collection[0].artist, 50, "Chevelle");
 	my_cd_collection[0].trackcount = 9;
-	my_cd_collection[0].rating = 5;
+	my_cd_collection[0].rating = Excellent;
 
 	strcpy_s(my_cd_collection[1].name, 50, "Koi No Yokan");
 	strcpy_s(my_cd_collection[1].artist, 50, "Deftones");
 	my_cd_collection[1].trackcount = 13;
-	my_cd_collection[1].rating = 4;
+	my_cd_collection[1].rating = Good;
 }
 
 void display_cdcollection() {
